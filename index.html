@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image(s) Flipper</title>
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        select {
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Image Flipper</h2>
+        <ul style="text-align: left;">
+            <li>Add image(s), multiple images supported.</li>
+            <li>Select which direction to flip.</li>
+            <li>And Download in a zip folder.</li>
+        </ul>
+        
+        <br>
+        <br>
+        <br>
+        <div style="
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;">
+            <input type="file" id="imageInput" multiple>
+            <select id="flipDirection">
+                <option value="horizontal">↔ Horizontal</option>
+                <option value="vertical">↕ Vertical</option>
+              </select>
+        </div>
+        <button onclick="flipImages()">Flip and Download Images</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
